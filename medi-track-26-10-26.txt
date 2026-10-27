@@ -1,0 +1,292 @@
+MySQL Shell 8.0.46
+
+Copyright (c) 2016, 2026, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+ MySQL  SQL > \connect root@localhost:3306
+Creating a session to 'root@localhost:3306'
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 15
+Server version: 8.0.46 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:3306 ssl  SQL > CREATE DATABASE MediTrack;
+Query OK, 1 row affected (0.1010 sec)
+ MySQL  localhost:3306 ssl  SQL > use MediTrack;
+Default schema set to `MediTrack`.
+Fetching global names, object names from `meditrack` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  meditrack  SQL > CREATE TABLE Patients (
+                                          ->                                           ->     Patient_ID INT PRIMARY KEY,
+                                          ->                                           ->     Name VARCHAR(100),
+                                          ->                                           ->     Age INT,
+                                          ->                                           ->     Gender VARCHAR(10),
+                                          ->                                           ->     Contact VARCHAR(15),
+                                          ->                                           ->     Email VARCHAR(100),
+                                          ->                                           ->     Address VARCHAR(100)
+                                          ->                                           ->   );
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->     Patient_ID INT PRIMARY KEY,
+                                          -> ' at line 2
+ MySQL  localhost:3306 ssl  meditrack  SQL > Query OK, 0 rows affected (0.0261 sec)
+                                          -> CREATE TABLE Patients (
+                                          ->                                           ->     Patient_ID INT PRIMARY KEY,
+                                          ->                                           ->     Name VARCHAR(100),
+                                          ->                                           ->     Age INT,
+                                          ->                                           ->     Gender VARCHAR(10),
+                                          ->                                           ->     Contact VARCHAR(15),
+                                          ->                                           ->     Email VARCHAR(100),
+                                          ->                                           ->     Address VARCHAR(100)
+                                          ->                                           ->   );
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.0261 sec)
+CREATE TABLE Patients (
+                 ' at line 1
+ MySQL  localhost:3306 ssl  meditrack  SQL > Query OK, 0 rows affected (0.0261 sec)
+                                          -> CREATE TABLE Patients (
+                                          ->     Patient_ID INT PRIMARY KEY,
+
+                                          ->     Name VARCHAR(100),
+                                          ->     Age INT,
+                                          ->     Gender VARCHAR(10),
+                                          ->     Contact VARCHAR(15),
+                                          ->     Email VARCHAR(100),
+                                          ->     Address VARCHAR(100)
+                                          -> );
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.0261 sec)
+CREATE TABLE Patients (
+    Patient_ID IN' at line 1
+ MySQL  localhost:3306 ssl  meditrack  SQL > ^C
+ MySQL  localhost:3306 ssl  meditrack  SQL > CREATE TABLE Patients (
+                                          ->     Patient_ID INT PRIMARY KEY,
+
+                                          ->     Name VARCHAR(100),
+                                          ->     Age INT,
+                                          ->     Gender VARCHAR(10),
+                                          ->     Contact VARCHAR(15),
+                                          ->     Email VARCHAR(100),
+                                          ->     Address VARCHAR(100)
+                                          -> );
+Query OK, 0 rows affected (0.0975 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL > INSERT INTO Patients VALUES
+                                          -> (1, "Rohit Sharma", 34, "M", "9831000001", "rohit.sharma@gmail.com", "Kolkata"),
+                                          -> (2, "Simran Kaur", 29, "F", "9831000002", "simran.kaur@yahoo.com", "Delhi"),
+                                          -> (3, "Amit Ghosh", 45, "M", "9831000003", "amit.ghosh@gmail.com", "Mumbai"),
+                                          -> (4, "Nisha Patel", 51, "F", "9831000004", "nisha.patel@hotmail.com", "Ahmedabad"),
+                                          -> (5, "Suresh Reddy", 60, "M", "9831000005", "suresh.reddy@gmail.com", "Hyderabad"),
+                                          -> (6, "Meera Nair", 38, "F", "9831000006", "meera.nair@yahoo.com", "Chennai"),
+                                          -> (7, "Vikas Yadav", 27, "M", "9831000007", "vikas.yadav@outlook.com", "Lucknow"),
+                                          -> (8, "Anjali Gupta", 33, "F", "9831000008", "anjali.gupta@gmail.com", "Jaipur"),
+                                          -> (9, "Rajesh Kumar", 55, "M", "9831000009", "rajesh.kumar@yahoo.com", "Pune"),
+                                          -> (10, "Pooja Singh", 41, "F", "9831000010", "pooja.singh@gmail.com", "Bhopal"),
+                                          -> (11, "Sanjay Verma", 48, "M", "9831000011", "sanjay.verma@outlook.com", "Kolkata"),
+                                          -> (12, "Kiran Das", 36, "F", "9831000012", "kiran.das@gmail.com", "Delhi"),
+                                          -> (13, "Manoj Tiwari", 29, "M", "9831000013", "manoj.tiwari@yahoo.com", "Mumbai"),
+                                          -> (14, "Ritu Chatterjee", 44, "F", "9831000014", "ritu.chatterjee@gmail.com", "Kolkata"),
+                                          -> (15, "Deepak Joshi", 52, "M", "9831000015", "deepak.joshi@outlook.com", "Ahmedabad"),
+                                          -> (16, "Swati Bose", 31, "F", "9831000016", "swati.bose@gmail.com", "Hyderabad"),
+                                          -> (17, "Arvind Rao", 39, "M", "9831000017", "arvind.rao@yahoo.com", "Chennai"),
+                                          -> (18, "Nandini Sen", 26, "F", "9831000018", "nandini.sen@gmail.com", "Lucknow"),
+                                          -> (19, "Harish Chandra", 58, "M", "9831000019", "harish.chandra@outlook.com", "Jaipur"),
+                                          -> (20, "Lata Mishra", 47, "F", "9831000020", "lata.mishra@gmail.com", "Pune");
+Query OK, 20 rows affected (0.0132 sec)
+
+Records: 20  Duplicates: 0  Warnings: 0
+ MySQL  localhost:3306 ssl  meditrack  SQL > SELECT * FROM Patients;
++------------+-----------------+-----+--------+------------+----------------------------+-----------+
+| Patient_ID | Name            | Age | Gender | Contact    | Email                      | Address   |
++------------+-----------------+-----+--------+------------+----------------------------+-----------+
+|          1 | Rohit Sharma    |  34 | M      | 9831000001 | rohit.sharma@gmail.com     | Kolkata   |
+|          2 | Simran Kaur     |  29 | F      | 9831000002 | simran.kaur@yahoo.com      | Delhi     |
+|          3 | Amit Ghosh      |  45 | M      | 9831000003 | amit.ghosh@gmail.com       | Mumbai    |
+|          4 | Nisha Patel     |  51 | F      | 9831000004 | nisha.patel@hotmail.com    | Ahmedabad |
+|          5 | Suresh Reddy    |  60 | M      | 9831000005 | suresh.reddy@gmail.com     | Hyderabad |
+|          6 | Meera Nair      |  38 | F      | 9831000006 | meera.nair@yahoo.com       | Chennai   |
+|          7 | Vikas Yadav     |  27 | M      | 9831000007 | vikas.yadav@outlook.com    | Lucknow   |
+|          8 | Anjali Gupta    |  33 | F      | 9831000008 | anjali.gupta@gmail.com     | Jaipur    |
+|          9 | Rajesh Kumar    |  55 | M      | 9831000009 | rajesh.kumar@yahoo.com     | Pune      |
+|         10 | Pooja Singh     |  41 | F      | 9831000010 | pooja.singh@gmail.com      | Bhopal    |
+|         11 | Sanjay Verma    |  48 | M      | 9831000011 | sanjay.verma@outlook.com   | Kolkata   |
+|         12 | Kiran Das       |  36 | F      | 9831000012 | kiran.das@gmail.com        | Delhi     |
+|         13 | Manoj Tiwari    |  29 | M      | 9831000013 | manoj.tiwari@yahoo.com     | Mumbai    |
+|         14 | Ritu Chatterjee |  44 | F      | 9831000014 | ritu.chatterjee@gmail.com  | Kolkata   |
+|         15 | Deepak Joshi    |  52 | M      | 9831000015 | deepak.joshi@outlook.com   | Ahmedabad |
+|         16 | Swati Bose      |  31 | F      | 9831000016 | swati.bose@gmail.com       | Hyderabad |
+|         17 | Arvind Rao      |  39 | M      | 9831000017 | arvind.rao@yahoo.com       | Chennai   |
+|         18 | Nandini Sen     |  26 | F      | 9831000018 | nandini.sen@gmail.com      | Lucknow   |
+|         19 | Harish Chandra  |  58 | M      | 9831000019 | harish.chandra@outlook.com | Jaipur    |
+|         20 | Lata Mishra     |  47 | F      | 9831000020 | lata.mishra@gmail.com      | Pune      |
++------------+-----------------+-----+--------+------------+----------------------------+-----------+
+20 rows in set (0.0056 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL > CREATE TABLE Doctors (
+                                          ->     Doctor_ID INT PRIMARY KEY,
+                                          ->     Name VARCHAR(100),
+                                          ->     Specialization VARCHAR(50),
+
+                                          ->     Fee DECIMAL(10,2),
+                                          ->     Experience_Years INT
+                                          -> );
+Query OK, 0 rows affected (0.0494 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL > INSERT INTO Doctors VALUES
+                                          -> (201, "Dr. Rohan Mehta", "Cardiology", 800.00, 12),
+                                          -> (202, "Dr. Ananya Roy", "Dermatology", 500.00, 8),
+                                          -> (203, "Dr. Vikram Singh", "Orthopedics", 700.00, 15),
+                                          -> (204, "Dr. Priya Nair", "Pediatrics", 450.00, 10),
+                                          -> (205, "Dr. Arjun Kapoor", "Neurology", 900.00, 18),
+                                          -> (206, "Dr. Sneha Iyer", "Gynecology", 600.00, 9),
+                                          -> (207, "Dr. Karan Malhotra", "ENT", 400.00, 7),
+                                          -> (208, "Dr. Divya Menon", "Ophthalmology", 550.00, 11),
+                                          -> (209, "Dr. Rahul Verma", "General Medicine", 300.00, 6),
+                                          -> (210, "Dr. Neha Joshi", "Psychiatry", 650.00, 13),
+                                          -> (211, "Dr. Sameer Khan", "Urology", 750.00, 14),
+                                          -> (212, "Dr. Pooja Desai", "Endocrinology", 700.00, 10),
+                                          -> (213, "Dr. Aditya Rao", "Gastroenterology", 800.00, 16),
+                                          -> (214, "Dr. Kavita Pillai", "Oncology", 1000.00, 20),
+                                          -> (215, "Dr. Manish Agarwal", "Nephrology", 850.00, 17);
+Query OK, 15 rows affected (0.0068 sec)
+
+Records: 15  Duplicates: 0  Warnings: 0
+ MySQL  localhost:3306 ssl  meditrack  SQL > SELECT * FROM Doctors;
++-----------+--------------------+------------------+---------+------------------+
+| Doctor_ID | Name               | Specialization   | Fee     | Experience_Years |
++-----------+--------------------+------------------+---------+------------------+
+|       201 | Dr. Rohan Mehta    | Cardiology       |  800.00 |               12 |
+|       202 | Dr. Ananya Roy     | Dermatology      |  500.00 |                8 |
+|       203 | Dr. Vikram Singh   | Orthopedics      |  700.00 |               15 |
+|       204 | Dr. Priya Nair     | Pediatrics       |  450.00 |               10 |
+|       205 | Dr. Arjun Kapoor   | Neurology        |  900.00 |               18 |
+|       206 | Dr. Sneha Iyer     | Gynecology       |  600.00 |                9 |
+|       207 | Dr. Karan Malhotra | ENT              |  400.00 |                7 |
+|       208 | Dr. Divya Menon    | Ophthalmology    |  550.00 |               11 |
+|       209 | Dr. Rahul Verma    | General Medicine |  300.00 |                6 |
+|       210 | Dr. Neha Joshi     | Psychiatry       |  650.00 |               13 |
+|       211 | Dr. Sameer Khan    | Urology          |  750.00 |               14 |
+|       212 | Dr. Pooja Desai    | Endocrinology    |  700.00 |               10 |
+|       213 | Dr. Aditya Rao     | Gastroenterology |  800.00 |               16 |
+|       214 | Dr. Kavita Pillai  | Oncology         | 1000.00 |               20 |
+|       215 | Dr. Manish Agarwal | Nephrology       |  850.00 |               17 |
++-----------+--------------------+------------------+---------+------------------+
+15 rows in set (0.0009 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL > CREATE TABLE Appointments (
+                                          ->     Appointment_ID INT PRIMARY KEY,
+                                          ->     Patient_ID INT,
+                                          ->     Doctor_ID INT,
+                                          ->     Appointment_Date DATE,
+                                          ->     Status VARCHAR(20),
+                                          ->     FOREIGN KEY (Patient_ID) REFERENCES Patients(Patient_ID),
+                                          ->     FOREIGN KEY (Doctor_ID) REFERENCES Doctors(Doctor_ID)
+                                          -> );
+Query OK, 0 rows affected (0.0653 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL > INSERT INTO Appointments VALUES
+
+                                          -> (3001, 1, 201, "2024-01-05", "Completed"),
+                                          -> (3002, 3, 205, "2024-01-06", "Completed"),
+                                          -> (3003, 5, 203, "2024-01-07", "Completed"),
+                                          -> (3004, 7, 209, "2024-01-08", "Completed"),
+                                          -> (3005, 10, 214, "2024-01-09", "Completed"),
+                                          -> (3006, 2, 206, "2024-01-10", "Completed"),
+                                          -> (3007, 4, 202, "2024-01-11", "Completed"),
+                                          -> (3008, 6, 208, "2024-01-12", "Completed"),
+                                          -> (3009, 8, 213, "2024-01-13", "Completed"),
+                                          -> (3010, 9, 210, "2024-01-14", "Completed");
+Query OK, 10 rows affected (0.0271 sec)
+
+Records: 10  Duplicates: 0  Warnings: 0
+ MySQL  localhost:3306 ssl  meditrack  SQL > SELECT * FROM Appointments;
++----------------+------------+-----------+------------------+-----------+
+| Appointment_ID | Patient_ID | Doctor_ID | Appointment_Date | Status    |
++----------------+------------+-----------+------------------+-----------+
+|           3001 |          1 |       201 | 2024-01-05       | Completed |
+|           3002 |          3 |       205 | 2024-01-06       | Completed |
+|           3003 |          5 |       203 | 2024-01-07       | Completed |
+|           3004 |          7 |       209 | 2024-01-08       | Completed |
+|           3005 |         10 |       214 | 2024-01-09       | Completed |
+|           3006 |          2 |       206 | 2024-01-10       | Completed |
+|           3007 |          4 |       202 | 2024-01-11       | Completed |
+|           3008 |          6 |       208 | 2024-01-12       | Completed |
+|           3009 |          8 |       213 | 2024-01-13       | Completed |
+|           3010 |          9 |       210 | 2024-01-14       | Completed |
++----------------+------------+-----------+------------------+-----------+
+10 rows in set (0.0194 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL > CREATE TABLE Prescriptions (
+                                          ->     Prescription_ID INT PRIMARY KEY,
+                                          ->     Appointment_ID INT,
+                                          ->     Medicine VARCHAR(100),
+                                          ->     Dosage VARCHAR(20),
+                                          ->     Duration_Days INT,
+                                          ->     FOREIGN KEY (Appointment_ID) REFERENCES Appointments(Appointment_ID)
+                                          -> );
+Query OK, 0 rows affected (0.0498 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL > INSERT INTO Prescriptions VALUES
+                                          -> (5001, 3001, "Aspirin", "75mg", 30),
+                                          -> (5002, 3001, "Atorvastatin", "20mg", 30),
+                                          -> (5003, 3002, "Levetiracetam", "500mg", 60),
+                                          -> (5004, 3002, "Gabapentin", "300mg", 30),
+                                          -> (5005, 3003, "Ibuprofen", "400mg", 10),
+                                          -> (5006, 3003, "Calcium", "500mg", 30),
+                                          -> (5007, 3004, "Paracetamol", "500mg", 5),
+                                          -> (5008, 3005, "Tamoxifen", "20mg", 90),
+                                          -> (5009, 3006, "Folic Acid", "5mg", 30),
+                                          -> (5010, 3007, "Cetirizine", "10mg", 15),
+                                          -> (5011, 3008, "Timolol Eye Drops", "0.5%", 30),
+                                          -> (5012, 3009, "Omeprazole", "20mg", 14),
+                                          -> (5013, 3010, "Sertraline", "50mg", 60);
+Query OK, 13 rows affected (0.0260 sec)
+
+Records: 13  Duplicates: 0  Warnings: 0
+ MySQL  localhost:3306 ssl  meditrack  SQL > CREATE TABLE Billing (
+                                          ->     Bill_ID INT PRIMARY KEY,
+                                          ->     Appointment_ID INT,
+                                          ->     Amount DECIMAL(10,2),
+                                          ->     Payment_Method VARCHAR(50),
+
+                                          ->     Payment_Status VARCHAR(20),
+
+                                          ->     FOREIGN KEY (Appointment_ID) REFERENCES Appointments(Appointment_ID)
+                                          -> );
+Query OK, 0 rows affected (0.0710 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL > INSERT INTO Billing VALUES
+                                          -> (4001, 3001, 800.00, "Credit Card", "Paid"),
+                                          -> (4002, 3002, 900.00, "Credit Card", "Paid"),
+                                          -> (4003, 3003, 700.00, "Cash", "Paid"),
+                                          -> (4004, 3004, 300.00, "Debit Card", "Paid"),
+                                          -> (4005, 3005, 1000.00, "Credit Card", "Paid"),
+                                          -> (4006, 3006, 600.00, "UPI", "Paid"),
+                                          -> (4007, 3007, 500.00, "Cash", "Paid"),
+                                          -> (4008, 3008, 550.00, "Debit Card", "Paid"),
+                                          -> (4009, 3009, 800.00, "Credit Card", "Paid"),
+                                          -> (4010, 3010, 650.00, "UPI", "Paid");
+Query OK, 10 rows affected (0.0064 sec)
+
+Records: 10  Duplicates: 0  Warnings: 0
+ MySQL  localhost:3306 ssl  meditrack  SQL > SELECT * FROM Billing;
++---------+----------------+---------+----------------+----------------+
+| Bill_ID | Appointment_ID | Amount  | Payment_Method | Payment_Status |
++---------+----------------+---------+----------------+----------------+
+|    4001 |           3001 |  800.00 | Credit Card    | Paid           |
+|    4002 |           3002 |  900.00 | Credit Card    | Paid           |
+|    4003 |           3003 |  700.00 | Cash           | Paid           |
+|    4004 |           3004 |  300.00 | Debit Card     | Paid           |
+|    4005 |           3005 | 1000.00 | Credit Card    | Paid           |
+|    4006 |           3006 |  600.00 | UPI            | Paid           |
+|    4007 |           3007 |  500.00 | Cash           | Paid           |
+|    4008 |           3008 |  550.00 | Debit Card     | Paid           |
+|    4009 |           3009 |  800.00 | Credit Card    | Paid           |
+|    4010 |           3010 |  650.00 | UPI            | Paid           |
++---------+----------------+---------+----------------+----------------+
+10 rows in set (0.0012 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL > SELECT *
+                                          -> FROM Appointments
+                                          -> WHERE Appointment_Date > '2024-01-08';
++----------------+------------+-----------+------------------+-----------+
+| Appointment_ID | Patient_ID | Doctor_ID | Appointment_Date | Status    |
++----------------+------------+-----------+------------------+-----------+
+|           3005 |         10 |       214 | 2024-01-09       | Completed |
+|           3006 |          2 |       206 | 2024-01-10       | Completed |
+|           3007 |          4 |       202 | 2024-01-11       | Completed |
+|           3008 |          6 |       208 | 2024-01-12       | Completed |
+|           3009 |          8 |       213 | 2024-01-13       | Completed |
+|           3010 |          9 |       210 | 2024-01-14       | Completed |
++----------------+------------+-----------+------------------+-----------+
+6 rows in set (0.0220 sec)
+ MySQL  localhost:3306 ssl  meditrack  SQL >
